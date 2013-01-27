@@ -1,4 +1,4 @@
-prhistory: prhistory.c
+all: prhistory.c
 	cc -o prhistory -I/usr/local/include -L/usr/local/lib -lsqlite3 -lcurl prhistory.c
 
 install:
