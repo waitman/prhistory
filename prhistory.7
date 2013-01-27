@@ -34,32 +34,37 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .
 .SH SYNOPSIS
 .
-.B prhistory 
+
+cd /usr/ports/lang/perl5.16
+
+prhistory
+
+
+prhistory perl
+
+
+prhistory -p 123456
 .
 .SH DESCRIPTION
+
+This program searches the GNATS database for PR corresponding to a port. The user can get a list of PR for the port by changing to the path of the port and typing prhistory, or they may type prhistory <portname>
+
 .
-s program searches the GNATS database for PR corresponding to a port.
+.SH OPTIONS
+.IP -h
+I will show HELP
+.IP -l
+I will show legend
+.IP -u
+We will update PR db from the WWW
+.IP -c
+You will see closed PR TOO (AS WELL) if AVAILABLE
+.IP -p
+Display PR (ports only).
 
-Command Switches:
--h I will show HELP
--l I will show legend
--u We will update PR db from the WWW
--c You will see closed PR TOO (AS WELL) if AVAILABLE
--p Display PR (ports only).
+.SH FILES
 
-Run without search term and we will look for port in cwd.
-
-Example:
-# cd /usr/ports/lang/perl5.16
-# prhistory
-
-Example:
-# prhistory perl
-
-Example: lookup PR
-# prhistory -p 123456
-
-db file is stored in /var/db/ports/ports-pr.db (SQLite3)
+prhistory stores the PR database in /var/db/ports/ports-pr.db. This file is an SQLite3 database.
 
 .
 .
