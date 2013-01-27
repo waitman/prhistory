@@ -1,0 +1,29 @@
+prhistory
+Copyright 2013 Waitman Gobble
+waitman@waitman.net
+
+This program searches the GNATS database for PR corresponding to a port.
+
+Command Switches:
+-h I will show HELP
+-l I will show legend
+-u We will update PR db from the WWW
+-c You will see closed PR TOO (AS WELL) if AVAILABLE
+-p Display PR (ports only).
+
+Run without search term and we will look for port in cwd.
+
+Example:
+# cd /usr/ports/lang/perl5.16
+# prhistory
+
+Example:
+# prhistory perl
+
+Example: lookup PR
+# prhistory -p 123456
+
+db file is stored in /var/db/ports/ports-pr.db (SQLite3)
+
+
+
