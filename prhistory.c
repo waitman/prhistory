@@ -27,6 +27,15 @@ return (0);
 }
 
 int
+clear_progress(void* ptr, double TotalToDownload, double NowDownloaded,
+                    double TotalToUpload, double NowUploaded)
+{
+return (0);
+}
+
+
+
+int
 dodld(void)
 {
 CURL *curl;
@@ -64,7 +73,7 @@ char outfilename[FILENAME_MAX] = "/dev/tty";
 sprintf(url,"http://www.freebsd.org/cgi/query-pr.cgi?pr=ports%%2F%s&f=raw",pr);
 curl = curl_easy_init();
 if (curl) {
-        fprintf(stdout,"Attempting to fetching PR from WWW please wait a moment...");
+        fprintf(stdout,"Attempting to fetch PR from WWW please wait a moment...\n\n");
         fflush(stdout);
 
         fp = fopen(outfilename,"w");
@@ -72,7 +81,7 @@ if (curl) {
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
         curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 0);
-        curl_easy_setopt(curl, CURLOPT_PROGRESSFUNCTION, progress_func);
+	curl_easy_setopt(curl, CURLOPT_PROGRESSFUNCTION, clear_progress);
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
         fclose(fp);
