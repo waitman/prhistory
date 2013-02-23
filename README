@@ -25,5 +25,25 @@ Example: lookup PR
 
 db file is stored in /var/db/ports/ports-pr.db (SQLite3)
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Make options
+
+make - build prhistory
+make install - install prhistory to /usr/local/bin
+make clean - clean src directory
+make deinstall - remove prhistory from /usr/local/bin
+make update - execute command `prhistory -u`
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Create your own ports-pr.db
+ see instructions at https://dx.burplex.com/bin/prhistory.html
+
+
+B U R P L E X
+ S Y S T E M S
+San Jose, California USA
+
 
 

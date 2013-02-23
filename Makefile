@@ -4,10 +4,12 @@ all: prhistory.c
 install:
 	cp prhistory /usr/local/bin
 	cp prhistory.7 /usr/local/man/man7/
-	prhistory -u
 
 deinstall:
 	rm -f /usr/local/bin/prhistory
 
 clean:
 	rm -f prhistory
+
+update:
+	prhistory -u
