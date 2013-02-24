@@ -1,12 +1,13 @@
 all: prhistory.c
-	cc -o prhistory -I/usr/local/include -L/usr/local/lib -lsqlite3 -lcurl prhistory.c
+	${CC} -o prhistory -I${PREFIX}/include -L${PREFIX}/lib -lsqlite3 -lcurl prhistory.c
 
 install:
-	cp prhistory /usr/local/bin
-	cp prhistory.7 /usr/local/man/man7/
+	install -g wheel -m 555 -o root prhistory ${PREFIX}/bin
+	install -g wheel -m 444 -o root prhistory.7 ${PREFIX}/man/man7/
 
 deinstall:
-	rm -f /usr/local/bin/prhistory
+	rm -f ${PREFIX}/bin/prhistory
+	rm -f /var/db/ports/ports-pr.db
 
 clean:
 	rm -f prhistory
